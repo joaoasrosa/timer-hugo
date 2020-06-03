@@ -12,8 +12,8 @@
                 {{ $delay := mul (add $index 1) 300 }}
                 <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="{{ $delay }}ms">
                     <div class="media-left">
-                        <div class="icon">
-                            {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
+                        <div class="image">
+                            {{ with .image }}<img src="images/podcastsources/{{ . }}"></img>{{ end }}
                         </div>
                     </div>
                     <div class="media-body">
