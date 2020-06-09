@@ -16,9 +16,8 @@
                             {{ with .image }}<img src="images/podcastsources/{{ . }}"></img>{{ end }}
                         </div>
                     </div>
-                    <div class="media-body">
+                    <div class="media-body" style="height: 100px; display: flex; align-items: center;">
                         {{ with .title }}<h4 class="media-heading">{{ . }}</h4>{{ end }}
-                        {{ with .description }}<p>{{ . }}</p>{{ end }}
                     </div>
                 </div>
             </div>
