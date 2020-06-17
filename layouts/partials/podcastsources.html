@@ -11,13 +11,18 @@
             <div class="col-sm-6 col-lg-4">
                 {{ $delay := mul (add $index 1) 300 }}
                 <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="{{ $delay }}ms">
+                    {{ $link := .link }}
                     <div class="media-left">
                         <div class="image">
-                            {{ with .image }}<img src="images/podcastsources/{{ . }}"></img>{{ end }}
+                            <a href="{{ $link }}" target="_blank">
+                                {{ with .image }}<img src="images/podcastsources/{{ . }}"></img>{{ end }}
+                            </a>
                         </div>
                     </div>
                     <div class="media-body" style="height: 100px; display: flex; align-items: center;">
-                        {{ with .title }}<h4 class="media-heading">{{ . }}</h4>{{ end }}
+                        <a href="{{ $link }}" target="_blank">
+                            {{ with .title }}<h4 class="media-heading">{{ . }}</h4>{{ end }}
+                        </a>
                     </div>
                 </div>
             </div>
