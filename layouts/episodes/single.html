@@ -9,10 +9,7 @@
                     <h2>{{ .Title }}</h2>
                     <div class="portfolio-meta">
                         <span>Episode # {{ .Params.episodeNumber }}</span>|
-                        <span>{{ .PublishDate.Format "2006-01-02" }}</span>|
-                        <span><a href="{{ .Params.spotify }}" target="_blank">Spotify</a></span>|
-                        <span><a href="{{ .Params.itunes }}" target="_blank">iTunes</a></span>|
-                        <span><a href="{{ .Params.googlePodcast }}" target="_blank">Google Podcast</a></span>
+                        <span>{{ .PublishDate.Format "2006-01-02" }}</span>
                     </div>
                 </div>
             </div>
@@ -35,6 +32,12 @@
                 {{ with .Content }}
                 <div class="work-single-content">
                     {{ . }}
+                </div>
+                {{ end }}
+                <!-- work single Content -->
+                {{ with .Params.episodeUrl }}
+                <div class="work-single-content">
+                    <iframe style="border: none" src="{{ . }}" height="360" width="100%" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
                 </div>
                 {{ end }}
             </div>
