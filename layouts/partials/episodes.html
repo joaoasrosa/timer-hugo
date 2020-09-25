@@ -7,9 +7,11 @@
             {{ with .Site.Params.episodes.subtitle }}<p class="wow fadeInDown" data-wow-delay=".5s">{{ . }}</p>{{ end }}
         </div>
         <div class="row">
-            {{ range $index, $element:= where .Site.RegularPages "Type" "episodes" }}
+            {{ $index := 0}}
+            {{ range first 6 (where .Site.RegularPages "Type" "episodes") }}           
             <div class="col-md-4 col-sm-6">
                 {{ $delay := mul $index 300 }}
+                {{ $index := add $index 1 }}
                 <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="{{ $delay }}ms">
                     <div class="img-wrapper">
                         <img src="{{ .Params.Image | relURL }}" onerror='this.onerror=null; this.src="{{ .Params.FallbackImage | relURL }}"' class="img-fluid" alt="{{ .Params.Guest }}">
