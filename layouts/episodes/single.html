@@ -46,9 +46,10 @@
                 <div class="work-single-sidebar">
                     {{ $guestTwitterHandler := .Params.guestTwitterHandler }}
                     {{ $guestTwitter := .Params.guestTwitter }}
+                    {{ $guestLinkedIn := .Params.guestLinkedIn }}
                     {{ with .Params.guest }}
                     <h5>Guest</h5>
-                    <h6>{{ . }} {{ if $guestTwitterHandler }} (<a href="{{ $guestTwitter }}" target="_blank">{{ $guestTwitterHandler }}</a>) {{ end }}</h6>
+                    <h6>{{ . }} {{ if $guestTwitterHandler }} (<a href="{{ $guestTwitter }}" target="_blank">{{ $guestTwitterHandler }}</a>) {{ else if $guestLinkedIn }} (<a href="{{ $guestLinkedIn }}" target="_blank">LinkedIn</a>) {{ end }}</h6>
                     {{ end }}
                     {{ with .Params.publishDate }}
                     <h5>Date</h5>
