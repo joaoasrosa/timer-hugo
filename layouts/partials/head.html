@@ -33,4 +33,7 @@
   {{ "<!-- template main css file -->" | safeHTML }}
   {{ $styles := resources.Get "css/style.css" | minify}}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+  {{ "<!-- Font Awesome Css -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "plugins/font-awesome/css/all.min.css" | absURL }}">
+
 </head>
